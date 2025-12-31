@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цифровой подарок от DolboDF</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Минималистичный снегопад -->
+    <div class="minimal-snow" id="snowfall"></div>
+    
+    <!-- Навигация -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">DOLBODF</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Главная</a>
+                <a href="minecraft.html" class="nav-link">Minecraft</a>
+                <a href="dfng.html" class="nav-link">Трек</a>
+                <a href="game.html" class="nav-link">Игра</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Главный экран -->
+    <main class="hero-section">
+        <div class="glass-panel fade-in" style="max-width: 800px; padding: 48px; background-image: url('assets/images/main-bg.png'); background-size: cover; background-position: center; background-blend-mode: overlay;">
+            <div style="background: rgba(0, 0, 0, 0.7); padding: 40px; border-radius: 12px;">
+                <h1 class="main-title">С НОВЫМ 2026 ГОДОМ!</h1>
+                <p class="subtitle fade-in delay-1">
+                    Цифровой подарок для всего 4"Ж" класса от Доминика и Марка (DolboDF)
+                </p>
+                
+                <div class="fade-in delay-2" style="margin-top: 48px;">
+                    <a href="minecraft.html" class="glass-btn glass-btn-primary" style="padding: 16px 40px;">
+                        <i class="fas fa-rocket"></i>
+                        ГОТОВЫ СМОТРЕТЬ? 🎁
+                    </a>
+                </div>
+                
+                <div class="fade-in delay-3" style="margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+                    <p style="color: var(--color-lighter-gray); font-size: 0.95rem; line-height: 1.6;">
+                        <i class="fas fa-gift" style="color: var(--color-accent-gold); margin-right: 10px;"></i>
+                        Этот сайт — наш новогодний подарок для каждого из вас. 
+                        Здесь вас ждут удивительные миры, музыка и сюрпризы!
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Фоновое аудио -->
+        <audio id="background-audio" loop>
+            <source src="assets/audio/mko.mp3" type="audio/mpeg">
+            Ваш браузер не поддерживает аудио.
+        </audio>
+        
+        <!-- Контроль аудио -->
+        <div class="audio-controls">
+            <div class="audio-panel">
+                <button id="play-pause" class="audio-btn" title="Пауза">
+                    <i class="fas fa-pause"></i>
+                </button>
+                <input type="range" id="volume" class="volume-slider" min="0" max="100" value="40">
+            </div>
+        </div>
+    </main>
+    
+    <!-- Футер -->
+    <footer class="footer">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="color: var(--color-light-gray); font-size: 14px;">
+                Создано с ❤️ и новогодним настроением
+            </p>
+            <p class="footer-signature">
+                DolboDF (Доминик и Марк) · 4"Ж" класс · 2026
+            </p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        // Инициализация минималистичного снегопада
+        document.addEventListener('DOMContentLoaded', function() {
+            const snow = document.getElementById('snowfall');
+            for (let i = 0; i < 80; i++) {
+                const flake = document.createElement('div');
+                flake.className = 'minimal-snowflake';
+                
+                const size = Math.random() * 3 + 1;
+                flake.style.width = `${size}px`;
+                flake.style.height = `${size}px`;
+                flake.style.left = `${Math.random() * 100}vw`;
+                flake.style.opacity = Math.random() * 0.15 + 0.05;
+                
+                const duration = Math.random() * 20 + 20;
+                flake.style.animationDuration = `${duration}s`;
+                flake.style.animationDelay = `${Math.random() * 5}s`;
+                
+                snow.appendChild(flake);
+            }
+        });
+    </script>
+</body>
+</html>

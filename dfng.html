@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новогодний трек | DeepseekForever</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="minimal-snow" id="snowfall"></div>
+    
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">DOLBODF</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="minecraft.html" class="nav-link">Minecraft</a>
+                <a href="dfng.html" class="nav-link active">Трек</a>
+                <a href="game.html" class="nav-link">Игра</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="glass-panel fade-in" style="max-width: 900px; margin: 0 auto;">
+            <h1 class="main-title">DEEPSEEKFOREVER</h1>
+            <p class="subtitle">Новогодняя версия</p>
+            
+            <!-- Обложка трека -->
+            <div class="track-cover glass-card fade-in delay-1" style="max-width: 400px; margin: 0 auto 40px;">
+                <img src="assets/images/dfngobloz.png" alt="Обложка трека Deepseek Forever" style="width: 100%; height: auto; border-radius: 10px;">
+            </div>
+            
+            <!-- Аудиоплеер -->
+            <div class="audio-player fade-in delay-2">
+                <h3 style="margin-bottom: 20px; color: var(--color-accent-gold); display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-play-circle"></i> Предпрослушивание
+                </h3>
+                <div class="player-controls">
+                    <button id="track-play-pause" class="glass-btn" style="padding: 10px 20px;">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <div class="progress-bar">
+                        <div class="progress" id="track-progress"></div>
+                    </div>
+                    <input type="range" id="track-volume" class="volume-slider" min="0" max="100" value="70" style="width: 100px;">
+                </div>
+                <div class="time-display">
+                    <span id="track-current-time">00:00</span>
+                    <span id="track-duration">00:00</span>
+                </div>
+                
+                <audio id="track-audio">
+                    <source src="assets/audio/preddfng.mp3" type="audio/mpeg">
+                    Ваш браузер не поддерживает аудио.
+                </audio>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="https://deepseekforever.github.io/newyear/audio.html" target="_blank" class="glass-btn glass-btn-secondary" style="padding: 15px 40px;">
+                        <i class="fas fa-headphones"></i> ПОСЛУШАТЬ ПОЛНЫЙ ТРЕК
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Описание трека -->
+            <div class="track-description glass-card fade-in delay-3" style="padding: 30px; margin-top: 40px;">
+                <h3 style="color: var(--color-accent-gold); margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-info-circle"></i> О ТРЕКЕ
+                </h3>
+                <p style="margin-bottom: 20px; line-height: 1.8; color: var(--color-lighter-gray);">
+                    Это новогодняя версия оригинального трека Deepseek Forever. Мы взяли старую версию Deepseek Forever и добавили в него новогодних проблем: сломанные гирлянды, неработающий ВПН, кислые мандарины и ёлку, которая отказывается гореть.
+                </p>
+                <div style="background: rgba(212, 175, 55, 0.1); padding: 20px; border-radius: 10px; margin: 25px 0; border-left: 3px solid var(--color-accent-gold);">
+                    <p style="font-style: italic; margin-bottom: 15px; color: var(--color-white);">
+                        Но как и в оригинале, здесь есть надежда — Дипсик всё починит! 🛠️✨
+                    </p>
+                </div>
+                <p style="margin-top: 20px; line-height: 1.8; color: var(--color-lighter-gray);">
+                    <strong style="color: var(--color-white);">Создано:</strong><br>
+                    • Markol (текст, идея)<br>
+                    • Dom146 (идея)<br>
+                    • DeepSeek (помощь с текстом, идеи)<br>
+                    • ElestroneJoin (защита прав)
+                </p>
+            </div>
+            
+            <!-- Кнопка возврата -->
+            <div class="fade-in delay-4" style="text-align: center; margin-top: 50px;">
+                <a href="minecraft.html" class="glass-btn" style="padding: 15px 40px;">
+                    <i class="fas fa-arrow-left"></i> ВЕРНУТЬСЯ К МИНЕКРАФТ-МИРУ
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Инициализация снегопада для этой страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            const snow = document.getElementById('snowfall');
+            for (let i = 0; i < 40; i++) {
+                const flake = document.createElement('div');
+                flake.className = 'minimal-snowflake';
+                
+                const size = Math.random() * 2 + 1;
+                flake.style.width = `${size}px`;
+                flake.style.height = `${size}px`;
+                flake.style.left = `${Math.random() * 100}vw`;
+                flake.style.opacity = Math.random() * 0.08 + 0.02;
+                
+                const duration = Math.random() * 30 + 25;
+                flake.style.animationDuration = `${duration}s`;
+                flake.style.animationDelay = `${Math.random() * 5}s`;
+                
+                snow.appendChild(flake);
+            }
+            
+            // Инициализация аудиоплеера
+            const audio = document.getElementById('track-audio');
+            const playBtn = document.getElementById('track-play-pause');
+            const progress = document.getElementById('track-progress');
+            const currentTime = document.getElementById('track-current-time');
+            const duration = document.getElementById('track-duration');
+            const volume = document.getElementById('track-volume');
+            const progressBar = document.querySelector('.progress-bar');
+            
+            if (audio && playBtn) {
+                playBtn.addEventListener('click', function() {
+                    if (audio.paused) {
+                        audio.play();
+                        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    } else {
+                        audio.pause();
+                        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    }
+                });
+                
+                audio.addEventListener('timeupdate', function() {
+                    if (progress) {
+                        const percent = (audio.currentTime / audio.duration) * 100;
+                        progress.style.width = `${percent}%`;
+                    }
+                    
+                    if (currentTime) {
+                        currentTime.textContent = formatTime(audio.currentTime);
+                    }
+                });
+                
+                audio.addEventListener('loadedmetadata', function() {
+                    if (duration) {
+                        duration.textContent = formatTime(audio.duration);
+                    }
+                });
+                
+                if (progressBar) {
+                    progressBar.addEventListener('click', function(e) {
+                        const rect = this.getBoundingClientRect();
+                        const pos = (e.clientX - rect.left) / rect.width;
+                        audio.currentTime = pos * audio.duration;
+                    });
+                }
+                
+                if (volume) {
+                    volume.addEventListener('input', function() {
+                        audio.volume = this.value / 100;
+                    });
+                }
+            }
+            
+            function formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            }
+        });
+    </script>
+</body>
+</html>

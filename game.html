@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра от DolboDF | Новогодний подарок</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="minimal-snow" id="snowfall"></div>
+    
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">DOLBODF</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="minecraft.html" class="nav-link">Minecraft</a>
+                <a href="dfng.html" class="nav-link">Трек</a>
+                <a href="game.html" class="nav-link active">Игра</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="glass-panel fade-in" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            <h1 class="main-title">ИГРА ОТ DOLBODF</h1>
+            <p class="subtitle" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+                Специальная новогодняя игра, созданная с любовью для всего класса
+            </p>
+            
+            <!-- Галерея скриншотов игры -->
+            <div class="image-gallery fade-in delay-1" style="margin: 60px 0;">
+                <div class="gallery-item">
+                    <img src="assets/images/game1.png" alt="Скриншот игры 1" class="gallery-image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="assets/images/game2.png" alt="Скриншот игры 2" class="gallery-image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="assets/images/game3.png" alt="Скриншот игры 3" class="gallery-image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+            
+            <!-- Основная кнопка игры -->
+            <div class="fade-in delay-2" style="margin: 50px 0;">
+                <a href="https://deepseekforever.github.io/game/" target="_blank" class="glass-btn glass-btn-primary" style="padding: 18px 50px; font-size: 18px;">
+                    <i class="fas fa-play-circle" style="margin-right: 15px;"></i> ИГРАТЬ СЕЙЧАС
+                </a>
+            </div>
+            
+            <!-- Описание -->
+            <div class="fade-in delay-3">
+                <div class="glass-card" style="padding: 40px; max-width: 800px; margin: 0 auto; text-align: left;">
+                    <h3 style="color: var(--color-accent-gold); margin-bottom: 25px; font-size: 1.8rem; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-info-circle"></i> ОБ ИГРЕ
+                    </h3>
+                    <p style="line-height: 1.8; margin-bottom: 20px; font-size: 1.1rem; color: var(--color-lighter-gray);">
+                        Мы создали эту игру специально для новогоднего подарка. Здесь вас ждут увлекательные приключения, интересные задания и, конечно же, новогодняя атмосфера!
+                    </p>
+                    <p style="line-height: 1.8; font-size: 1.1rem; color: var(--color-lighter-gray);">
+                        Игра полностью бесплатна и доступна прямо в браузере. Не нужно ничего скачивать или устанавливать!
+                    </p>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; justify-content: center;">
+                        <div style="text-align: center; flex: 1; min-width: 150px;">
+                            <div style="font-size: 36px; color: var(--color-accent-gold); margin-bottom: 10px;">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div style="color: var(--color-white); font-weight: 500;">Увлекательный геймплей</div>
+                        </div>
+                        
+                        <div style="text-align: center; flex: 1; min-width: 150px;">
+                            <div style="font-size: 36px; color: var(--color-accent-emerald); margin-bottom: 10px;">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div style="color: var(--color-white); font-weight: 500;">Красивая графика</div>
+                        </div>
+                        
+                        <div style="text-align: center; flex: 1; min-width: 150px;">
+                            <div style="font-size: 36px; color: var(--color-accent-gold); margin-bottom: 10px;">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <div style="color: var(--color-white); font-weight: 500;">Новогодняя музыка</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Кнопка возврата -->
+            <div class="fade-in delay-4" style="margin-top: 60px;">
+                <a href="index.html" class="glass-btn glass-btn-secondary" style="padding: 15px 40px;">
+                    <i class="fas fa-home"></i> НА ГЛАВНУЮ СТРАНИЦУ
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Фоновое аудио -->
+    <audio id="background-audio" loop>
+        <source src="assets/audio/csly.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио.
+    </audio>
+    
+    <!-- Контроль аудио -->
+    <div class="audio-controls">
+        <div class="audio-panel">
+            <button id="play-pause" class="audio-btn" title="Пауза">
+                <i class="fas fa-pause"></i>
+            </button>
+            <input type="range" id="volume" class="volume-slider" min="0" max="100" value="50">
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Инициализация снегопада для этой страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            const snow = document.getElementById('snowfall');
+            for (let i = 0; i < 70; i++) {
+                const flake = document.createElement('div');
+                flake.className = 'minimal-snowflake';
+                
+                const size = Math.random() * 2.5 + 1;
+                flake.style.width = `${size}px`;
+                flake.style.height = `${size}px`;
+                flake.style.left = `${Math.random() * 100}vw`;
+                flake.style.opacity = Math.random() * 0.12 + 0.03;
+                
+                const duration = Math.random() * 20 + 20;
+                flake.style.animationDuration = `${duration}s`;
+                flake.style.animationDelay = `${Math.random() * 5}s`;
+                
+                snow.appendChild(flake);
+            }
+        });
+    </script>
+</body>
+</html>
